@@ -1,4 +1,8 @@
 # src/latest_ai_flow/main.py
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from pydantic import BaseModel
 
 from crewai.flow import Flow, listen, start
